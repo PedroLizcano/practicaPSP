@@ -4,10 +4,10 @@
 	xmlns:jaxws="http://cxf.apache.org/jaxws"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 	<jaxws:endpoint
-		xmlns:tns="http://www.example.org/escuela/" id="escuela"
-		implementor="org.example.escuela.EscuelaImpl"
-		wsdlLocation="WSDL-APP/WSDLFile.wsdl" endpointName="tns:escuelaSOAP"
-		serviceName="tns:escuela" address="/escuelaSOAP">
+		xmlns:tns="http://www.example.org/School/" id="school"
+		implementor="com.psp.practica.school.SchoolImpl"
+		wsdlLocation="WSDL-APP/WSDLFile.wsdl" endpointName="tns:SchoolSOAP"
+		serviceName="tns:School" address="/SchoolSOAP">
 		<jaxws:features>
 			<bean class="org.apache.cxf.feature.LoggingFeature" />
 		</jaxws:features>

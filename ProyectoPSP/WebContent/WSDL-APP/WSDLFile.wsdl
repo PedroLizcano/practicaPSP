@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="escuela" targetNamespace="http://www.example.org/escuela/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/escuela/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+<wsdl:definitions name="School" targetNamespace="http://www.example.org/School/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.example.org/School/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
   <wsdl:types>
-    <xsd:schema targetNamespace="http://www.example.org/escuela/">
-			<xsd:element name="asignaturaRequest">
+    <xsd:schema targetNamespace="http://www.example.org/School/">
+			<xsd:element name="SubjectRequest">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="nameasignatura" type="xsd:string"/>
-						<xsd:element name="idasignatura" type="xsd:string"/>
+						<xsd:element name="NameSubject" type="xsd:string"/>
+						<xsd:element name="IdSubject" type="xsd:string"/>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
 
-			<xsd:element name="asignaturaResponse">
+			<xsd:element name="SubjectResponse">
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="greet" type="xsd:string"/>
@@ -20,16 +20,16 @@
 			</xsd:element>
 			
 
-			<xsd:element name="alumnoRequest">
+			<xsd:element name="StudentRequest">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="namealumno" type="xsd:string"/>
-						<xsd:element name="DNIalumno" type="xsd:string"/>
-						<xsd:element name="direccionalumno" type="xsd:string"/>
+						<xsd:element name="NameStudent" type="xsd:string"/>
+						<xsd:element name="DNIStudent" type="xsd:string"/>
+						<xsd:element name="AddressStudent" type="xsd:string"/>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="alumnoResponse">
+			<xsd:element name="StudentResponse">
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="greet" type="xsd:string"/>
@@ -37,16 +37,16 @@
 				</xsd:complexType>
 			</xsd:element>
 			
-			<xsd:element name="evaluacionRequest">
+			<xsd:element name="EvaluationRequest">
 				<xsd:complexType>
 					<xsd:sequence>
-						<xsd:element name="DNIalumno" type="xsd:string"/>
-						<xsd:element name="idasignatura" type="xsd:string"/>
-						<xsd:element name="nota" type="xsd:int"/>
+						<xsd:element name="DNIStudent" type="xsd:string"/>
+						<xsd:element name="IdSubject" type="xsd:string"/>
+						<xsd:element name="Note" type="xsd:int"/>
 					</xsd:sequence>
 				</xsd:complexType>
 			</xsd:element>
-			<xsd:element name="evaluacionResponse">
+			<xsd:element name="EvaluationResponse">
 				<xsd:complexType>
 					<xsd:sequence>
 						<xsd:element name="greet" type="xsd:string"/>
@@ -56,54 +56,54 @@
 
 		</xsd:schema>
   </wsdl:types>
-  <wsdl:message name="evaluacionRequest">
-    <wsdl:part name="parameters" element="tns:evaluacionRequest">
+  <wsdl:message name="SubjectResponse">
+    <wsdl:part name="parameters" element="tns:SubjectResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="asignaturaResponse">
-    <wsdl:part name="parameters" element="tns:asignaturaResponse">
+  <wsdl:message name="EvaluationRequest">
+    <wsdl:part name="parameters" element="tns:EvaluationRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="evaluacionResponse">
-    <wsdl:part name="parameters" element="tns:evaluacionResponse">
+  <wsdl:message name="EvaluationResponse">
+    <wsdl:part name="parameters" element="tns:EvaluationResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="alumnoRequest">
-    <wsdl:part name="parameters" element="tns:alumnoRequest">
+  <wsdl:message name="StudentRequest">
+    <wsdl:part name="parameters" element="tns:StudentRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="alumnoResponse">
-    <wsdl:part name="parameters" element="tns:alumnoResponse">
+  <wsdl:message name="StudentResponse">
+    <wsdl:part name="parameters" element="tns:StudentResponse">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:message name="asignaturaRequest">
-    <wsdl:part name="parameters" element="tns:asignaturaRequest">
+  <wsdl:message name="SubjectRequest">
+    <wsdl:part name="parameters" element="tns:SubjectRequest">
     </wsdl:part>
   </wsdl:message>
-  <wsdl:portType name="escuela">
-    <wsdl:operation name="escuelaasignatura">
-      <wsdl:input message="tns:asignaturaRequest">
+  <wsdl:portType name="School">
+    <wsdl:operation name="Alta_de_asignaturas">
+      <wsdl:input message="tns:SubjectRequest">
     </wsdl:input>
-      <wsdl:output message="tns:asignaturaResponse">
+      <wsdl:output message="tns:SubjectResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="escuelaalumno">
-      <wsdl:input message="tns:alumnoRequest">
+    <wsdl:operation name="Alta_de_alumnos">
+      <wsdl:input message="tns:StudentRequest">
     </wsdl:input>
-      <wsdl:output message="tns:alumnoResponse">
+      <wsdl:output message="tns:StudentResponse">
     </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="escuelaevaluacion">
-      <wsdl:input message="tns:evaluacionRequest">
+    <wsdl:operation name="Evaluacion_de_alumno_en_una_asignatura">
+      <wsdl:input message="tns:EvaluationRequest">
     </wsdl:input>
-      <wsdl:output message="tns:evaluacionResponse">
+      <wsdl:output message="tns:EvaluationResponse">
     </wsdl:output>
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:binding name="escuelaSOAP" type="tns:escuela">
+  <wsdl:binding name="SchoolSOAP" type="tns:School">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
-    <wsdl:operation name="escuelaasignatura">
-      <soap:operation soapAction="http://www.example.org/escuela/escuelaasignatura"/>
+    <wsdl:operation name="Alta_de_asignaturas">
+      <soap:operation soapAction="http://www.example.org/School/Alta_de_asignaturas"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -111,8 +111,8 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="escuelaalumno">
-      <soap:operation soapAction="http://www.example.org/esceula/escuelaalumno"/>
+    <wsdl:operation name="Alta_de_alumnos">
+      <soap:operation soapAction="http://www.example.org/School/Alta_de_alumnos"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -120,8 +120,8 @@
         <soap:body use="literal"/>
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="escuelaevaluacion">
-      <soap:operation soapAction="http://www.example.org/esceula/escuelaevaluacion"/>
+    <wsdl:operation name="Evaluacion_de_alumno_en_una_asignatura">
+      <soap:operation soapAction="http://www.example.org/School/Evaluacion_de_alumno_en_una_asignatura"/>
       <wsdl:input>
         <soap:body use="literal"/>
       </wsdl:input>
@@ -130,9 +130,9 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:service name="escuela">
-    <wsdl:port name="escuelaSOAP" binding="tns:escuelaSOAP">
-      <soap:address location="http://localhost:8081/ProyectoPSP/services/escuelaSOAP"/>
+  <wsdl:service name="School">
+    <wsdl:port name="SchoolSOAP" binding="tns:SchoolSOAP">
+      <soap:address location="http://localhost:8081/ProyectoPSP/services/SchoolSOAP"/>
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>
